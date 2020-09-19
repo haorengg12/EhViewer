@@ -1,3 +1,7 @@
+# DEPRECATED
+
+[![Telegram](https://img.shields.io/badge/chat-Telegram-blue.svg)](https://t.me/ehviewer)
+
 # EhViewer
 
 ![Icon](art/launcher_icon-web.png)
@@ -31,6 +35,13 @@ Linux
 The apk is in app\build\outputs\apk
 
 
+# Download
+
+[下载](https://github.com/seven332/EhViewer/releases)
+
+[Download](https://github.com/seven332/EhViewer/releases)
+
+
 # Thanks
 
 本项目受到了诸多开源项目的帮助
@@ -55,7 +66,7 @@ Here is the libraries
 
 # License
 
-    Copyright (C) 2014-2016 Hippo Seven
+    Copyright (C) 2014-2019 Hippo Seven
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -31,7 +31,6 @@ import java.util.regex.Pattern;
 import okhttp3.Cookie;
 import okhttp3.CookieJar;
 import okhttp3.HttpUrl;
-import okhttp3.Request;
 
 public class CookieRepository implements CookieJar {
 
@@ -84,6 +83,19 @@ public class CookieRepository implements CookieJar {
         db.add(toAdd);
       }
     }
+  }
+
+  public String getCookieHeader(HttpUrl url) {
+    List<Cookie> cookies = getCookies(url);
+    StringBuilder cookieHeader = new StringBuilder();
+    for (int i = 0, size = cookies.size(); i < size; i++) {
+      if (i > 0) {
+        cookieHeader.append("; ");
+      }
+      Cookie cookie = cookies.get(i);
+      cookieHeader.append(cookie.name()).append('=').append(cookie.value());
+    }
+    return cookieHeader.toString();
   }
 
   public synchronized List<Cookie> getCookies(HttpUrl url) {
@@ -146,7 +158,7 @@ public class CookieRepository implements CookieJar {
   }
 
   @Override
-  public List<Cookie> loadForRequest(HttpUrl httpUrl, Request request) {
+  public List<Cookie> loadForRequest(HttpUrl httpUrl) {
     return getCookies(httpUrl);
   }
 
